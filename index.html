@@ -12,10 +12,20 @@
             theme: {
                 extend: {
                     colors: {
-                        darkbg: '#0b0f19',
-                        darkcard: '#131c2e',
-                        accent: '#3b82f6',
-                        accentglow: '#60a5fa'
+                        darkbg: '#0e0f11',
+                        darkcard: '#17191d',
+                        accent: '#d4875a',
+                        accentglow: '#e8a87c',
+                        copper: {
+                            50: '#fbf4ef', 100: '#f6e4d7', 200: '#eecab0', 300: '#e6b08c',
+                            400: '#dd9a6f', 500: '#d4875a', 600: '#a95f38', 700: '#8a4c2e',
+                            800: '#6b3b26', 900: '#4d2b1d', 950: '#2e1a13'
+                        },
+                        graphite: {
+                            50: '#fafaf9', 100: '#f5f5f4', 200: '#e7e5e4', 300: '#d6d3d1',
+                            400: '#a8a29e', 500: '#78716c', 600: '#57534e', 700: '#3a3b40',
+                            800: '#26282c', 900: '#17191d', 950: '#0e0f11'
+                        }
                     }
                 }
             }
@@ -33,81 +43,81 @@
             font-family: 'Fira Code', monospace;
         }
         .glass-panel {
-            background: rgba(19, 28, 46, 0.75);
+            background: rgba(23, 25, 29, 0.75);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(212, 135, 90, 0.15);
         }
         .glass-panel-hover:hover {
-            border-color: rgba(59, 130, 246, 0.4);
-            box-shadow: 0 0 25px rgba(59, 130, 246, 0.15);
+            border-color: rgba(212, 135, 90, 0.4);
+            box-shadow: 0 0 25px rgba(212, 135, 90, 0.15);
         }
         /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #0b0f19;
+            background: #0e0f11;
         }
         ::-webkit-scrollbar-thumb {
-            background: #1e293b;
+            background: #26282c;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #3b82f6;
+            background: #d4875a;
         }
     </style>
 </head>
-<body class="bg-darkbg text-slate-100 antialiased selection:bg-blue-500 selection:text-white relative overflow-x-hidden">
+<body class="bg-darkbg text-graphite-100 antialiased selection:bg-copper-500 selection:text-white relative overflow-x-hidden">
 
     <!-- Interactive Canvas Background for Silicon / Circuit Nodes -->
     <canvas id="circuit-canvas" class="fixed inset-0 pointer-events-none z-0 opacity-25"></canvas>
 
     <!-- Navigation Bar -->
-    <header class="sticky top-0 z-50 glass-panel border-b border-slate-800/80 transition-all duration-300">
+    <header class="sticky top-0 z-50 glass-panel border-b border-graphite-800/80 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="#" class="flex items-center space-x-3 group">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-mono font-bold text-lg shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-copper-500 to-copper-800 flex items-center justify-center text-white font-mono font-bold text-lg shadow-lg shadow-copper-500/20 group-hover:scale-105 transition-transform">
                     ZC
                 </div>
                 <div>
-                    <span class="font-bold text-lg tracking-tight group-hover:text-blue-400 transition-colors">Zhuo Chen, Ph.D.</span>
-                    <span class="block text-xs text-slate-400 font-mono">Senior RTL Design Engineer @ Apple</span>
+                    <span class="font-bold text-lg tracking-tight group-hover:text-copper-400 transition-colors">Zhuo Chen, Ph.D.</span>
+                    <span class="block text-xs text-graphite-400 font-mono">Senior RTL Design Engineer @ Apple</span>
                 </div>
             </a>
 
             <!-- Desktop Nav Links -->
             <nav class="hidden md:flex items-center space-x-8 font-medium text-sm">
-                <a href="#about" class="text-slate-300 hover:text-blue-400 transition-colors">About</a>
-                <a href="#experience" class="text-slate-300 hover:text-blue-400 transition-colors">Career Trajectory</a>
-                <a href="#projects" class="text-slate-300 hover:text-blue-400 transition-colors">Projects</a>
-                <a href="#publications" class="text-slate-300 hover:text-blue-400 transition-colors">Publications</a>
-                <a href="#impact" class="text-slate-300 hover:text-blue-400 transition-colors">Impact</a>
-                <a href="#skills" class="text-slate-300 hover:text-blue-400 transition-colors">Skills</a>
-                <a href="#beyond" class="text-slate-300 hover:text-blue-400 transition-colors">Beyond Work</a>
+                <a href="#about" class="text-graphite-300 hover:text-copper-400 transition-colors">About</a>
+                <a href="#experience" class="text-graphite-300 hover:text-copper-400 transition-colors">Career Trajectory</a>
+                <a href="#projects" class="text-graphite-300 hover:text-copper-400 transition-colors">Projects</a>
+                <a href="#publications" class="text-graphite-300 hover:text-copper-400 transition-colors">Publications</a>
+                <a href="#impact" class="text-graphite-300 hover:text-copper-400 transition-colors">Impact</a>
+                <a href="#skills" class="text-graphite-300 hover:text-copper-400 transition-colors">Skills</a>
+                <a href="#beyond" class="text-graphite-300 hover:text-copper-400 transition-colors">Beyond Work</a>
             </nav>
 
             <!-- Actions -->
             <div class="flex items-center space-x-4">
-                <a href="mailto:chenzhuo0526@gmail.com" class="hidden sm:inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm shadow-lg shadow-blue-600/30 transition-all hover:scale-[1.02]">
+                <a href="mailto:chenzhuo0526@gmail.com" class="hidden sm:inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-copper-600 hover:bg-copper-500 text-white font-medium text-sm shadow-lg shadow-copper-600/30 transition-all hover:scale-[1.02]">
                     <i class="fa-solid fa-envelope"></i>
                     <span>Contact</span>
                 </a>
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-xl glass-panel text-slate-300">
+                <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-xl glass-panel text-graphite-300">
                     <i class="fa-solid fa-bars text-lg"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden glass-panel border-t border-slate-800 px-4 pt-2 pb-6 space-y-3">
-            <a href="#about" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-blue-600/20">About</a>
-            <a href="#experience" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-blue-600/20">Career Trajectory</a>
-            <a href="#projects" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-blue-600/20">Projects</a>
-            <a href="#publications" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-blue-600/20">Publications</a>
-            <a href="#impact" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-blue-600/20">Impact</a>
-            <a href="#skills" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-blue-600/20">Skills</a>
-            <a href="#beyond" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-blue-600/20">Beyond Work</a>
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-t border-graphite-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block px-3 py-2 rounded-lg text-graphite-300 hover:bg-copper-600/20">About</a>
+            <a href="#experience" class="block px-3 py-2 rounded-lg text-graphite-300 hover:bg-copper-600/20">Career Trajectory</a>
+            <a href="#projects" class="block px-3 py-2 rounded-lg text-graphite-300 hover:bg-copper-600/20">Projects</a>
+            <a href="#publications" class="block px-3 py-2 rounded-lg text-graphite-300 hover:bg-copper-600/20">Publications</a>
+            <a href="#impact" class="block px-3 py-2 rounded-lg text-graphite-300 hover:bg-copper-600/20">Impact</a>
+            <a href="#skills" class="block px-3 py-2 rounded-lg text-graphite-300 hover:bg-copper-600/20">Skills</a>
+            <a href="#beyond" class="block px-3 py-2 rounded-lg text-graphite-300 hover:bg-copper-600/20">Beyond Work</a>
         </div>
     </header>
 
@@ -116,36 +126,36 @@
         <!-- Hero Section -->
         <section id="about" class="pt-8 pb-12">
             <div class="space-y-6 max-w-4xl">
-                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-mono font-medium">
-                    <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-copper-500/10 border border-copper-500/30 text-copper-400 text-xs font-mono font-medium">
+                    <span class="w-2 h-2 rounded-full bg-copper-500 animate-pulse"></span>
                     <span>Apple Inc. • Hardware Technology (HWT) • ATG</span>
                 </div>
                 <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
-                    Hi, I'm <span class="bg-gradient-to-r from-blue-400 via-indigo-300 to-blue-600 bg-clip-text text-transparent">Zhuo Chen, Ph.D.</span>
+                    Hi, I'm <span class="bg-gradient-to-r from-copper-300 via-copper-100 to-copper-500 bg-clip-text text-transparent">Zhuo Chen, Ph.D.</span>
                 </h1>
-                <p class="text-lg sm:text-xl text-slate-300 leading-relaxed font-light">
+                <p class="text-lg sm:text-xl text-graphite-300 leading-relaxed font-light">
                     Senior RTL Design Engineer specializing in high-speed SerDes RX/TX modeling, mixed-signal simulations, advanced TSMC node architectures, and custom CAD automation workflows.
                 </p>
                 <div class="flex flex-wrap gap-4 pt-2">
-                    <a href="#experience" class="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium shadow-lg shadow-blue-600/30 transition-all flex items-center space-x-2">
+                    <a href="#experience" class="px-6 py-3 rounded-xl bg-copper-600 hover:bg-copper-500 text-white font-medium shadow-lg shadow-copper-600/30 transition-all flex items-center space-x-2">
                         <span>Explore Career</span>
                         <i class="fa-solid fa-arrow-down text-xs"></i>
                     </a>
-                    <a href="#projects" class="px-6 py-3 rounded-xl glass-panel hover:bg-slate-800 text-slate-200 font-medium transition-all flex items-center space-x-2">
+                    <a href="#projects" class="px-6 py-3 rounded-xl glass-panel hover:bg-graphite-800 text-graphite-200 font-medium transition-all flex items-center space-x-2">
                         <span>View Projects</span>
                         <i class="fa-solid fa-code text-xs"></i>
                     </a>
                     <div class="flex items-center space-x-3 ml-2">
-                        <a href="mailto:chenzhuo0526@gmail.com" class="p-3 rounded-xl glass-panel text-slate-300 hover:text-blue-400 transition-colors" title="Email">
+                        <a href="mailto:chenzhuo0526@gmail.com" class="p-3 rounded-xl glass-panel text-graphite-300 hover:text-copper-400 transition-colors" title="Email">
                             <i class="fa-solid fa-envelope text-lg"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/zhuo-chen-ph-d-21658914a/" target="_blank" class="p-3 rounded-xl glass-panel text-slate-300 hover:text-blue-400 transition-colors" title="LinkedIn">
+                        <a href="https://www.linkedin.com/in/zhuo-chen-ph-d-21658914a/" target="_blank" class="p-3 rounded-xl glass-panel text-graphite-300 hover:text-copper-400 transition-colors" title="LinkedIn">
                             <i class="fa-brands fa-linkedin-in text-lg"></i>
                         </a>
-                        <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=RivrHPQAAAAJ" target="_blank" class="p-3 rounded-xl glass-panel text-slate-300 hover:text-blue-400 transition-colors" title="Google Scholar">
+                        <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=RivrHPQAAAAJ" target="_blank" class="p-3 rounded-xl glass-panel text-graphite-300 hover:text-copper-400 transition-colors" title="Google Scholar">
                             <i class="fa-brands fa-google-scholar text-lg"></i>
                         </a>
-                        <a href="tel:+17349050341" class="p-3 rounded-xl glass-panel text-slate-300 hover:text-blue-400 transition-colors" title="Phone">
+                        <a href="tel:+17349050341" class="p-3 rounded-xl glass-panel text-graphite-300 hover:text-copper-400 transition-colors" title="Phone">
                             <i class="fa-solid fa-phone text-lg"></i>
                         </a>
                     </div>
@@ -155,12 +165,12 @@
 
         <!-- Career Trajectory Section -->
         <section id="experience" class="space-y-12">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800 pb-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-graphite-800 pb-6">
                 <div>
-                    <span class="text-blue-400 font-mono text-sm tracking-widest uppercase">Professional Timeline</span>
+                    <span class="text-copper-400 font-mono text-sm tracking-widest uppercase">Professional Timeline</span>
                     <h2 class="text-3xl font-bold tracking-tight text-white mt-1">Career Trajectory & Education</h2>
                 </div>
-                <p class="text-slate-400 text-sm max-w-md">
+                <p class="text-graphite-400 text-sm max-w-md">
                     Bridging cutting-edge hardware technology, high-speed circuit design, and intelligent CAD automation workflows.
                 </p>
             </div>
@@ -169,21 +179,21 @@
                 <!-- Professional Experience -->
                 <div class="lg:col-span-2 space-y-6">
                     <h3 class="text-xl font-bold text-white flex items-center space-x-2">
-                        <i class="fa-solid fa-briefcase text-blue-500"></i>
+                        <i class="fa-solid fa-briefcase text-copper-500"></i>
                         <span>Work Experience</span>
                     </h3>
 
                     <!-- Apple Item -->
                     <div class="glass-panel rounded-2xl p-6 glass-panel-hover transition-all relative overflow-hidden group">
-                        <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-blue-500"></div>
+                        <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-copper-500"></div>
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
                             <div>
-                                <h4 class="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">Senior RTL Design Engineer</h4>
-                                <span class="text-blue-400 text-sm font-medium">Apple Inc. • Hardware Technology (HWT) • ATG</span>
+                                <h4 class="text-lg font-bold text-white group-hover:text-copper-400 transition-colors">Senior RTL Design Engineer</h4>
+                                <span class="text-copper-400 text-sm font-medium">Apple Inc. • Hardware Technology (HWT) • ATG</span>
                             </div>
-                            <span class="inline-block px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-mono">12/2022 – Present</span>
+                            <span class="inline-block px-3 py-1 rounded-full bg-graphite-800 text-graphite-300 text-xs font-mono">12/2022 – Present</span>
                         </div>
-                        <ul class="space-y-3 text-slate-300 text-sm leading-relaxed list-disc list-inside">
+                        <ul class="space-y-3 text-graphite-300 text-sm leading-relaxed list-disc list-inside">
                             <li>Responsible for high-speed serial RXA and TXA modeling, RTL design, and verification at advanced TSMC nodes.</li>
                             <li>Developed robust RX and TX models for high-speed SERDES circuits, facilitating fast and accurate mixed-signal simulations for large-scale architectures.</li>
                             <li>Enabled early identification of potential design issues and provided critical feedback to circuit and digital RTL designers for optimization.</li>
@@ -194,15 +204,15 @@
 
                     <!-- Research Assistant UMich -->
                     <div class="glass-panel rounded-2xl p-6 glass-panel-hover transition-all relative overflow-hidden group">
-                        <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-indigo-500"></div>
+                        <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-copper-500"></div>
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
                             <div>
-                                <h4 class="text-lg font-bold text-white group-hover:text-indigo-400 transition-colors">Graduate Student Research Assistant</h4>
-                                <span class="text-indigo-400 text-sm font-medium">University of Michigan (Advisor: Prof. Zhong He)</span>
+                                <h4 class="text-lg font-bold text-white group-hover:text-copper-400 transition-colors">Graduate Student Research Assistant</h4>
+                                <span class="text-copper-400 text-sm font-medium">University of Michigan (Advisor: Prof. Zhong He)</span>
                             </div>
-                            <span class="inline-block px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-mono">09/2017 – 11/2022</span>
+                            <span class="inline-block px-3 py-1 rounded-full bg-graphite-800 text-graphite-300 text-xs font-mono">09/2017 – 11/2022</span>
                         </div>
-                        <ul class="space-y-3 text-slate-300 text-sm leading-relaxed list-disc list-inside">
+                        <ul class="space-y-3 text-graphite-300 text-sm leading-relaxed list-disc list-inside">
                             <li>Developed a back-end DSP ASIC (TSMC 65nm PDK) for 100MHz data acquisition and waveform processing of pixelated CdZnTe radiation sensors in a 7x7mm 64-pin QFN package.</li>
                             <li>Built test systems and firmware based on Xilinx Zynq-7 FPGA, paired with a Qt Framework acquisition software.</li>
                             <li>Verified and debugged noise performance of analog front-end signal readout ASICs (TSMC 130nm) across process corners.</li>
@@ -212,15 +222,15 @@
 
                     <!-- Undergrad Research Tsinghua -->
                     <div class="glass-panel rounded-2xl p-6 glass-panel-hover transition-all relative overflow-hidden group">
-                        <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-cyan-500"></div>
+                        <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-copper-500"></div>
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
                             <div>
-                                <h4 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">Undergraduate Research Assistant</h4>
-                                <span class="text-cyan-400 text-sm font-medium">Tsinghua University (Advisor: Assoc. Prof. Yuxiang Xing)</span>
+                                <h4 class="text-lg font-bold text-white group-hover:text-copper-400 transition-colors">Undergraduate Research Assistant</h4>
+                                <span class="text-copper-400 text-sm font-medium">Tsinghua University (Advisor: Assoc. Prof. Yuxiang Xing)</span>
                             </div>
-                            <span class="inline-block px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-mono">12/2015 – 06/2017</span>
+                            <span class="inline-block px-3 py-1 rounded-full bg-graphite-800 text-graphite-300 text-xs font-mono">12/2015 – 06/2017</span>
                         </div>
-                        <ul class="space-y-3 text-slate-300 text-sm leading-relaxed list-disc list-inside">
+                        <ul class="space-y-3 text-graphite-300 text-sm leading-relaxed list-disc list-inside">
                             <li>Explored machine learning applications for CT image reconstruction, building and training Convolutional Neural Networks (CNN) to reduce low-dose CT noise.</li>
                             <li>Implemented classical CT reconstruction algorithms using Filtered Back-Projection (FBP) and iterative methods.</li>
                         </ul>
@@ -230,48 +240,48 @@
                 <!-- Education & Degrees -->
                 <div class="space-y-6">
                     <h3 class="text-xl font-bold text-white flex items-center space-x-2">
-                        <i class="fa-solid fa-graduation-cap text-blue-500"></i>
+                        <i class="fa-solid fa-graduation-cap text-copper-500"></i>
                         <span>Education</span>
                     </h3>
 
                     <div class="glass-panel rounded-2xl p-6 space-y-4">
                         <div>
-                            <span class="text-xs font-mono text-blue-400">09/2017 – 11/2022</span>
+                            <span class="text-xs font-mono text-copper-400">09/2017 – 11/2022</span>
                             <h4 class="text-lg font-bold text-white mt-1">Ph.D. in Radiation Detection & Electronics (NERS)</h4>
-                            <p class="text-slate-400 text-sm">University of Michigan — Ann Arbor, MI</p>
+                            <p class="text-graphite-400 text-sm">University of Michigan — Ann Arbor, MI</p>
                         </div>
-                        <p class="text-xs text-slate-300 bg-slate-900/60 p-3 rounded-xl border border-slate-800">
-                            <strong>Dissertation:</strong> <a href="https://deepblue.lib.umich.edu/items/136d6233-8ae1-4b9e-bf97-94200845a33c" target="_blank" class="text-blue-400 hover:text-blue-300 underline underline-offset-2 transition-colors">Quantitative Measurement and Development of Back-end Processing System-on-Chip for the Pixelated CdZnTe Detector</a>.
+                        <p class="text-xs text-graphite-300 bg-graphite-900/60 p-3 rounded-xl border border-graphite-800">
+                            <strong>Dissertation:</strong> <a href="https://deepblue.lib.umich.edu/items/136d6233-8ae1-4b9e-bf97-94200845a33c" target="_blank" class="text-copper-400 hover:text-copper-300 underline underline-offset-2 transition-colors">Quantitative Measurement and Development of Back-end Processing System-on-Chip for the Pixelated CdZnTe Detector</a>.
                         </p>
                     </div>
 
                     <div class="glass-panel rounded-2xl p-6 space-y-4">
                         <div>
-                            <span class="text-xs font-mono text-blue-400">01/2019 – 05/2020</span>
+                            <span class="text-xs font-mono text-copper-400">01/2019 – 05/2020</span>
                             <h4 class="text-lg font-bold text-white mt-1">M.S. in Electrical & Computer Engineering</h4>
-                            <p class="text-slate-400 text-sm">University of Michigan — VLSI Track (GPA: 3.73/4.00)</p>
+                            <p class="text-graphite-400 text-sm">University of Michigan — VLSI Track (GPA: 3.73/4.00)</p>
                         </div>
-                        <p class="text-xs text-slate-300 bg-slate-900/60 p-3 rounded-xl border border-slate-800">
+                        <p class="text-xs text-graphite-300 bg-graphite-900/60 p-3 rounded-xl border border-graphite-800">
                             <strong>Core Coursework:</strong> EECS427, EECS470, EECS413, EECS522, EECS511, NERS590.
                         </p>
                     </div>
 
                     <div class="glass-panel rounded-2xl p-6 space-y-4">
                         <div>
-                            <span class="text-xs font-mono text-blue-400">08/2013 – 07/2017</span>
+                            <span class="text-xs font-mono text-copper-400">08/2013 – 07/2017</span>
                             <h4 class="text-lg font-bold text-white mt-1">B.E. in Engineering Physics</h4>
-                            <p class="text-slate-400 text-sm">Tsinghua University — Beijing, China (GPA: 3.72/4.00, Top 10%)</p>
+                            <p class="text-graphite-400 text-sm">Tsinghua University — Beijing, China (GPA: 3.72/4.00, Top 10%)</p>
                         </div>
-                        <p class="text-xs text-slate-300 bg-slate-900/60 p-3 rounded-xl border border-slate-800">
+                        <p class="text-xs text-graphite-300 bg-graphite-900/60 p-3 rounded-xl border border-graphite-800">
                             <strong>Thesis:</strong> Noise Reduction in Computed Tomography Images with Machine Learning (CNN).
                         </p>
                     </div>
 
                     <div class="glass-panel rounded-2xl p-6 space-y-4">
                         <div>
-                            <span class="text-xs font-mono text-blue-400">09/2014 – 06/2017</span>
+                            <span class="text-xs font-mono text-copper-400">09/2014 – 06/2017</span>
                             <h4 class="text-lg font-bold text-white mt-1">Bachelor of Economics in Economics</h4>
-                            <p class="text-slate-400 text-sm">School of Economics and Management, Tsinghua University — Beijing, P.R. China</p>
+                            <p class="text-graphite-400 text-sm">School of Economics and Management, Tsinghua University — Beijing, P.R. China</p>
                         </div>
                     </div>
                 </div>
@@ -280,16 +290,16 @@
 
         <!-- Projects Showcase Section -->
         <section id="projects" class="space-y-12">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800 pb-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-graphite-800 pb-6">
                 <div>
-                    <span class="text-blue-400 font-mono text-sm tracking-widest uppercase">Engineering Portfolio</span>
+                    <span class="text-copper-400 font-mono text-sm tracking-widest uppercase">Engineering Portfolio</span>
                     <h2 class="text-3xl font-bold tracking-tight text-white mt-1">Class & Research Projects</h2>
                 </div>
                 <!-- Filter Buttons -->
                 <div class="flex flex-wrap gap-2" id="project-filters">
-                    <button data-filter="all" class="px-4 py-2 rounded-xl text-xs font-medium bg-blue-600 text-white transition-all">All</button>
-                    <button data-filter="rtl" class="px-4 py-2 rounded-xl text-xs font-medium glass-panel text-slate-300 hover:bg-slate-800 transition-all">RTL & VLSI</button>
-                    <button data-filter="analog" class="px-4 py-2 rounded-xl text-xs font-medium glass-panel text-slate-300 hover:bg-slate-800 transition-all">Analog IC</button>
+                    <button data-filter="all" class="px-4 py-2 rounded-xl text-xs font-medium bg-copper-600 text-white transition-all">All</button>
+                    <button data-filter="rtl" class="px-4 py-2 rounded-xl text-xs font-medium glass-panel text-graphite-300 hover:bg-graphite-800 transition-all">RTL & VLSI</button>
+                    <button data-filter="analog" class="px-4 py-2 rounded-xl text-xs font-medium glass-panel text-graphite-300 hover:bg-graphite-800 transition-all">Analog IC</button>
                 </div>
             </div>
 
@@ -298,18 +308,18 @@
                 <div class="glass-panel rounded-3xl p-6 glass-panel-hover transition-all flex flex-col justify-between group" data-category="rtl">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-mono font-medium">EECS470</span>
-                            <span class="text-xs text-slate-400 font-mono">09/2020 – 12/2020</span>
+                            <span class="px-3 py-1 rounded-full bg-copper-500/10 border border-copper-500/30 text-copper-400 text-xs font-mono font-medium">EECS470</span>
+                            <span class="text-xs text-graphite-400 font-mono">09/2020 – 12/2020</span>
                         </div>
-                        <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors mb-2">Super-scalar Out-of-Order 32-bit RISC-V Microprocessor</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        <h3 class="text-xl font-bold text-white group-hover:text-copper-400 transition-colors mb-2">Super-scalar Out-of-Order 32-bit RISC-V Microprocessor</h3>
+                        <p class="text-graphite-300 text-sm leading-relaxed mb-6">
                             Designed and synthesized a two-way super-scalar, out-of-order RISC-V microprocessor in SystemVerilog. Synthesized with Intel 130nm PDK running at 100MHz in simulation. Implemented instruction prefetching, g-share branch predictor, load-store queue, write-back data cache, and automated validation script systems.
                         </p>
                     </div>
-                    <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800/80">
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-mono">SystemVerilog</span>
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-mono">RISC-V</span>
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-mono">Intel 130nm</span>
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-graphite-800/80">
+                        <span class="px-2.5 py-1 rounded-lg bg-graphite-900 text-graphite-300 text-xs font-mono">SystemVerilog</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-graphite-900 text-graphite-300 text-xs font-mono">RISC-V</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-graphite-900 text-graphite-300 text-xs font-mono">Intel 130nm</span>
                     </div>
                 </div>
 
@@ -317,18 +327,18 @@
                 <div class="glass-panel rounded-3xl p-6 glass-panel-hover transition-all flex flex-col justify-between group" data-category="rtl">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-xs font-mono font-medium">EECS427</span>
-                            <span class="text-xs text-slate-400 font-mono">09/2019 – 12/2019</span>
+                            <span class="px-3 py-1 rounded-full bg-copper-500/10 border border-copper-500/30 text-copper-400 text-xs font-mono font-medium">EECS427</span>
+                            <span class="text-xs text-graphite-400 font-mono">09/2019 – 12/2019</span>
                         </div>
-                        <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors mb-2">16-bit Microprocessor with CORDIC Coprocessor</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        <h3 class="text-xl font-bold text-white group-hover:text-copper-400 transition-colors mb-2">16-bit Microprocessor with CORDIC Coprocessor</h3>
+                        <p class="text-graphite-300 text-sm leading-relaxed mb-6">
                             Designed and optimized timing performance of standard logic gates at the physical layout level. Laid out a 16-bit microprocessor using Virtuoso and Design Compiler (Intel 130nm PDK), extending functionality to compute trigonometric functions via the CORDIC algorithm.
                         </p>
                     </div>
-                    <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800/80">
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-mono">Cadence Virtuoso</span>
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-mono">CORDIC</span>
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-mono">Layout Design</span>
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-graphite-800/80">
+                        <span class="px-2.5 py-1 rounded-lg bg-graphite-900 text-graphite-300 text-xs font-mono">Cadence Virtuoso</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-graphite-900 text-graphite-300 text-xs font-mono">CORDIC</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-graphite-900 text-graphite-300 text-xs font-mono">Layout Design</span>
                     </div>
                 </div>
 
@@ -336,18 +346,18 @@
                 <div class="glass-panel rounded-3xl p-6 glass-panel-hover transition-all flex flex-col justify-between group" data-category="analog">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono font-medium">NERS590</span>
-                            <span class="text-xs text-slate-400 font-mono">09/2019 – 12/2019</span>
+                            <span class="px-3 py-1 rounded-full bg-copper-500/10 border border-copper-500/30 text-copper-400 text-xs font-mono font-medium">NERS590</span>
+                            <span class="text-xs text-graphite-400 font-mono">09/2019 – 12/2019</span>
                         </div>
-                        <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors mb-2">Ultra-low-noise Charge Amplifier for Radiation Sensors</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        <h3 class="text-xl font-bold text-white group-hover:text-copper-400 transition-colors mb-2">Ultra-low-noise Charge Amplifier for Radiation Sensors</h3>
+                        <p class="text-graphite-300 text-sm leading-relaxed mb-6">
                             Designed an ultra-low-noise charge amplifier for semiconductor radiation sensors under advisor Gianluigi De Geronimo. Optimized noise performance extensively by tuning shaping times and transistor sizing.
                         </p>
                     </div>
-                    <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800/80">
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-mono">Analog Design</span>
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-mono">Low-Noise</span>
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-mono">SPICE</span>
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-graphite-800/80">
+                        <span class="px-2.5 py-1 rounded-lg bg-graphite-900 text-graphite-300 text-xs font-mono">Analog Design</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-graphite-900 text-graphite-300 text-xs font-mono">Low-Noise</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-graphite-900 text-graphite-300 text-xs font-mono">SPICE</span>
                     </div>
                 </div>
 
@@ -355,18 +365,18 @@
                 <div class="glass-panel rounded-3xl p-6 glass-panel-hover transition-all flex flex-col justify-between group" data-category="analog">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono font-medium">NERS522</span>
-                            <span class="text-xs text-slate-400 font-mono">01/2019 – 04/2019</span>
+                            <span class="px-3 py-1 rounded-full bg-copper-500/10 border border-copper-500/30 text-copper-400 text-xs font-mono font-medium">NERS522</span>
+                            <span class="text-xs text-graphite-400 font-mono">01/2019 – 04/2019</span>
                         </div>
-                        <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors mb-2">Advanced Analog Integrated Circuits</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        <h3 class="text-xl font-bold text-white group-hover:text-copper-400 transition-colors mb-2">Advanced Analog Integrated Circuits</h3>
+                        <p class="text-graphite-300 text-sm leading-relaxed mb-6">
                             Designed RF Low-Noise Amplifiers (LNA), Mixers, and Voltage-Controlled Oscillators (VCO) as part of advanced RF/Analog integrated circuit coursework.
                         </p>
                     </div>
-                    <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800/80">
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-mono">RF LNA</span>
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-mono">Mixer & VCO</span>
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs font-mono">Cadence</span>
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-graphite-800/80">
+                        <span class="px-2.5 py-1 rounded-lg bg-graphite-900 text-graphite-300 text-xs font-mono">RF LNA</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-graphite-900 text-graphite-300 text-xs font-mono">Mixer & VCO</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-graphite-900 text-graphite-300 text-xs font-mono">Cadence</span>
                     </div>
                 </div>
             </div>
@@ -374,12 +384,12 @@
 
         <!-- Publications Section -->
         <section id="publications" class="space-y-12">
-            <div class="border-b border-slate-800 pb-6 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+            <div class="border-b border-graphite-800 pb-6 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
                 <div>
-                    <span class="text-blue-400 font-mono text-sm tracking-widest uppercase">Research Output</span>
+                    <span class="text-copper-400 font-mono text-sm tracking-widest uppercase">Research Output</span>
                     <h2 class="text-3xl font-bold tracking-tight text-white mt-1">Publications & Papers</h2>
                 </div>
-                <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=RivrHPQAAAAJ" target="_blank" class="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm shadow-lg shadow-blue-600/30 transition-all hover:scale-[1.02] inline-flex items-center space-x-2 shrink-0 w-fit">
+                <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=RivrHPQAAAAJ" target="_blank" class="px-4 py-2.5 rounded-xl bg-copper-600 hover:bg-copper-500 text-white font-medium text-sm shadow-lg shadow-copper-600/30 transition-all hover:scale-[1.02] inline-flex items-center space-x-2 shrink-0 w-fit">
                     <i class="fa-brands fa-google-scholar"></i>
                     <span>View on Google Scholar</span>
                 </a>
@@ -389,11 +399,11 @@
                 <!-- Pub 1 -->
                 <div class="glass-panel rounded-2xl p-6 glass-panel-hover transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div class="space-y-2">
-                        <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-mono font-medium">Journal Article</span>
+                        <span class="px-3 py-1 rounded-full bg-copper-500/10 text-copper-400 text-xs font-mono font-medium">Journal Article</span>
                         <h4 class="text-base font-semibold text-white">Intrinsic Photopeak Efficiency Measurement and Simulation for Pixelated CdZnTe Detector</h4>
-                        <p class="text-slate-400 text-sm">Zhuo Chen, Yuefeng Zhu, Zhong He. <em>Nuclear Instruments and Methods in Physics Research Section A</em>, 980 (2020): 164501.</p>
+                        <p class="text-graphite-400 text-sm">Zhuo Chen, Yuefeng Zhu, Zhong He. <em>Nuclear Instruments and Methods in Physics Research Section A</em>, 980 (2020): 164501.</p>
                     </div>
-                    <a href="https://www.sciencedirect.com/science/article/abs/pii/S0168900220308986" target="_blank" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-blue-600 hover:text-white text-slate-300 text-xs font-medium transition-all flex items-center space-x-2 shrink-0">
+                    <a href="https://www.sciencedirect.com/science/article/abs/pii/S0168900220308986" target="_blank" class="px-4 py-2 rounded-xl bg-graphite-800 hover:bg-copper-600 hover:text-white text-graphite-300 text-xs font-medium transition-all flex items-center space-x-2 shrink-0">
                         <i class="fa-solid fa-book-open"></i>
                         <span>View Paper</span>
                     </a>
@@ -402,11 +412,11 @@
                 <!-- Pub 2 -->
                 <div class="glass-panel rounded-2xl p-6 glass-panel-hover transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div class="space-y-2">
-                        <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-mono font-medium">IEEE Transactions</span>
+                        <span class="px-3 py-1 rounded-full bg-copper-500/10 text-copper-400 text-xs font-mono font-medium">IEEE Transactions</span>
                         <h4 class="text-base font-semibold text-white">Filtered Backprojection in Compton Imaging Using a Spherical Harmonic Wiener Filter With Pixelated CdZnTe</h4>
-                        <p class="text-slate-400 text-sm">Daniel Shy, Zhuo Chen, Jeffrey A. Fessler, Zhong He. <em>IEEE Transactions on Nuclear Science</em> (2020).</p>
+                        <p class="text-graphite-400 text-sm">Daniel Shy, Zhuo Chen, Jeffrey A. Fessler, Zhong He. <em>IEEE Transactions on Nuclear Science</em> (2020).</p>
                     </div>
-                    <a href="https://ieeexplore.ieee.org/abstract/document/9298848" target="_blank" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-blue-600 hover:text-white text-slate-300 text-xs font-medium transition-all flex items-center space-x-2 shrink-0">
+                    <a href="https://ieeexplore.ieee.org/abstract/document/9298848" target="_blank" class="px-4 py-2 rounded-xl bg-graphite-800 hover:bg-copper-600 hover:text-white text-graphite-300 text-xs font-medium transition-all flex items-center space-x-2 shrink-0">
                         <i class="fa-solid fa-book-open"></i>
                         <span>View Paper</span>
                     </a>
@@ -415,11 +425,11 @@
                 <!-- Pub 3 -->
                 <div class="glass-panel rounded-2xl p-6 glass-panel-hover transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div class="space-y-2">
-                        <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-mono font-medium">Journal of Instrumentation</span>
+                        <span class="px-3 py-1 rounded-full bg-copper-500/10 text-copper-400 text-xs font-mono font-medium">Journal of Instrumentation</span>
                         <h4 class="text-base font-semibold text-white">Time encoded imaging of extended gamma-ray sources in 3D using the OrionUM pixelated CdZnTe with subpixel estimation and depth of interaction corrections</h4>
-                        <p class="text-slate-400 text-sm">Daniel Shy, Matthew Petryk, Zhuo Chen, Yuefeng Zhu, Scott Thompson, Zhong He. <em>JINST</em> 16(03), P03013.</p>
+                        <p class="text-graphite-400 text-sm">Daniel Shy, Matthew Petryk, Zhuo Chen, Yuefeng Zhu, Scott Thompson, Zhong He. <em>JINST</em> 16(03), P03013.</p>
                     </div>
-                    <a href="https://iopscience.iop.org/article/10.1088/1748-0221/16/03/P03013/meta" target="_blank" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-blue-600 hover:text-white text-slate-300 text-xs font-medium transition-all flex items-center space-x-2 shrink-0">
+                    <a href="https://iopscience.iop.org/article/10.1088/1748-0221/16/03/P03013/meta" target="_blank" class="px-4 py-2 rounded-xl bg-graphite-800 hover:bg-copper-600 hover:text-white text-graphite-300 text-xs font-medium transition-all flex items-center space-x-2 shrink-0">
                         <i class="fa-solid fa-book-open"></i>
                         <span>View Paper</span>
                     </a>
@@ -428,11 +438,11 @@
                 <!-- Pub 4 -->
                 <div class="glass-panel rounded-2xl p-6 glass-panel-hover transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div class="space-y-2">
-                        <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-mono font-medium">IEEE Transactions</span>
+                        <span class="px-3 py-1 rounded-full bg-copper-500/10 text-copper-400 text-xs font-mono font-medium">IEEE Transactions</span>
                         <h4 class="text-base font-semibold text-white">Point Spread Function Model of 3-Interaction Events for Super-MeV Compton Imaging Using Pixelated CdZnTe</h4>
-                        <p class="text-slate-400 text-sm"><em>IEEE Transactions on Nuclear Science</em>.</p>
+                        <p class="text-graphite-400 text-sm"><em>IEEE Transactions on Nuclear Science</em>.</p>
                     </div>
-                    <a href="https://ieeexplore.ieee.org/abstract/document/9507878" target="_blank" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-blue-600 hover:text-white text-slate-300 text-xs font-medium transition-all flex items-center space-x-2 shrink-0">
+                    <a href="https://ieeexplore.ieee.org/abstract/document/9507878" target="_blank" class="px-4 py-2 rounded-xl bg-graphite-800 hover:bg-copper-600 hover:text-white text-graphite-300 text-xs font-medium transition-all flex items-center space-x-2 shrink-0">
                         <i class="fa-solid fa-book-open"></i>
                         <span>View Paper</span>
                     </a>
@@ -441,11 +451,11 @@
                 <!-- Pub 5 -->
                 <div class="glass-panel rounded-2xl p-6 glass-panel-hover transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div class="space-y-2">
-                        <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-mono font-medium">Conference Paper</span>
+                        <span class="px-3 py-1 rounded-full bg-copper-500/10 text-copper-400 text-xs font-mono font-medium">Conference Paper</span>
                         <h4 class="text-base font-semibold text-white">Digital Signal Processing Application Specific Integrated Circuits for 3-D CdZnTe Gamma-ray Detector</h4>
-                        <p class="text-slate-400 text-sm">Zhong He, Zhuo Chen, Matthew Petryk, Seungheun Song, Michael P. Flynn.</p>
+                        <p class="text-graphite-400 text-sm">Zhong He, Zhuo Chen, Matthew Petryk, Seungheun Song, Michael P. Flynn.</p>
                     </div>
-                    <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=RivrHPQAAAAJ" target="_blank" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-blue-600 hover:text-white text-slate-300 text-xs font-medium transition-all flex items-center space-x-2 shrink-0">
+                    <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=RivrHPQAAAAJ" target="_blank" class="px-4 py-2 rounded-xl bg-graphite-800 hover:bg-copper-600 hover:text-white text-graphite-300 text-xs font-medium transition-all flex items-center space-x-2 shrink-0">
                         <i class="fa-solid fa-book-open"></i>
                         <span>View on Scholar</span>
                     </a>
@@ -455,11 +465,11 @@
 
         <!-- Global Impact Section -->
         <section id="impact" class="space-y-12">
-            <div class="border-b border-slate-800 pb-6">
-                <span class="text-blue-400 font-mono text-sm tracking-widest uppercase">Worldwide Citations</span>
+            <div class="border-b border-graphite-800 pb-6">
+                <span class="text-copper-400 font-mono text-sm tracking-widest uppercase">Worldwide Citations</span>
                 <h2 class="text-3xl font-bold tracking-tight text-white mt-1">Global Research Impact</h2>
-                <p class="text-slate-400 text-sm mt-3 max-w-3xl">
-                    My research has been cited by institutions across the globe. Each bubble marks the number of unique citing publications with at least one author at that institution. <span class="text-slate-500">Source: Google Scholar, data as of Sept. 23, 2026.</span>
+                <p class="text-graphite-400 text-sm mt-3 max-w-3xl">
+                    My research has been cited by institutions across the globe. Each bubble marks the number of unique citing publications with at least one author at that institution. <span class="text-graphite-500">Source: Google Scholar, data as of Sept. 23, 2026.</span>
                 </p>
             </div>
 
@@ -468,65 +478,65 @@
                     <a href="images/citations_united_states.png" target="_blank" rel="noopener" title="Open full-size map">
                         <img src="images/citations_united_states.png" alt="Map of U.S. institutions citing Zhuo Chen's research (16 citing works)" class="w-full aspect-[16/9] object-contain rounded-lg bg-white" loading="lazy">
                     </a>
-                    <figcaption class="text-slate-400 text-xs mt-3 text-center">United States — 16 citing works</figcaption>
+                    <figcaption class="text-graphite-400 text-xs mt-3 text-center">United States — 16 citing works</figcaption>
                 </figure>
 
                 <figure class="glass-panel rounded-2xl p-3 glass-panel-hover transition-all">
                     <a href="images/citations_east_asia.png" target="_blank" rel="noopener" title="Open full-size map">
                         <img src="images/citations_east_asia.png" alt="Map of citing institutions in China (21 citing works) and Japan (2)" class="w-full aspect-[16/9] object-contain rounded-lg bg-white" loading="lazy">
                     </a>
-                    <figcaption class="text-slate-400 text-xs mt-3 text-center">East Asia — China (21), Japan (2)</figcaption>
+                    <figcaption class="text-graphite-400 text-xs mt-3 text-center">East Asia — China (21), Japan (2)</figcaption>
                 </figure>
 
                 <figure class="glass-panel rounded-2xl p-3 glass-panel-hover transition-all">
                     <a href="images/citations_europe.png" target="_blank" rel="noopener" title="Open full-size map">
                         <img src="images/citations_europe.png" alt="Map of citing institutions in Europe (UK 3, Germany 1, Sweden 1, Russia 1)" class="w-full aspect-[16/9] object-contain rounded-lg bg-white" loading="lazy">
                     </a>
-                    <figcaption class="text-slate-400 text-xs mt-3 text-center">Europe — UK (3), Germany (1), Sweden (1), Russia (1)</figcaption>
+                    <figcaption class="text-graphite-400 text-xs mt-3 text-center">Europe — UK (3), Germany (1), Sweden (1), Russia (1)</figcaption>
                 </figure>
             </div>
         </section>
 
         <!-- Skills Section -->
         <section id="skills" class="space-y-12">
-            <div class="border-b border-slate-800 pb-6">
-                <span class="text-blue-400 font-mono text-sm tracking-widest uppercase">Technical Stack</span>
+            <div class="border-b border-graphite-800 pb-6">
+                <span class="text-copper-400 font-mono text-sm tracking-widest uppercase">Technical Stack</span>
                 <h2 class="text-3xl font-bold tracking-tight text-white mt-1">Programming & EDA Skills</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="glass-panel rounded-3xl p-8 space-y-6">
                     <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400">
+                        <div class="w-10 h-10 rounded-xl bg-copper-500/10 flex items-center justify-center text-copper-400">
                             <i class="fa-solid fa-code text-lg"></i>
                         </div>
                         <h3 class="text-xl font-bold text-white">Programming Languages</h3>
                     </div>
                     <div class="flex flex-wrap gap-2.5">
-                        <span class="px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-200 text-sm font-mono">C/C++</span>
-                        <span class="px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-200 text-sm font-mono">Python</span>
-                        <span class="px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-200 text-sm font-mono">SystemVerilog</span>
-                        <span class="px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-200 text-sm font-mono">VHDL</span>
-                        <span class="px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-200 text-sm font-mono">MATLAB</span>
-                        <span class="px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-200 text-sm font-mono">TCL</span>
-                        <span class="px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-200 text-sm font-mono">Perl</span>
+                        <span class="px-3.5 py-2 rounded-xl bg-graphite-900/80 border border-graphite-800 text-graphite-200 text-sm font-mono">C/C++</span>
+                        <span class="px-3.5 py-2 rounded-xl bg-graphite-900/80 border border-graphite-800 text-graphite-200 text-sm font-mono">Python</span>
+                        <span class="px-3.5 py-2 rounded-xl bg-graphite-900/80 border border-graphite-800 text-graphite-200 text-sm font-mono">SystemVerilog</span>
+                        <span class="px-3.5 py-2 rounded-xl bg-graphite-900/80 border border-graphite-800 text-graphite-200 text-sm font-mono">VHDL</span>
+                        <span class="px-3.5 py-2 rounded-xl bg-graphite-900/80 border border-graphite-800 text-graphite-200 text-sm font-mono">MATLAB</span>
+                        <span class="px-3.5 py-2 rounded-xl bg-graphite-900/80 border border-graphite-800 text-graphite-200 text-sm font-mono">TCL</span>
+                        <span class="px-3.5 py-2 rounded-xl bg-graphite-900/80 border border-graphite-800 text-graphite-200 text-sm font-mono">Perl</span>
                     </div>
                 </div>
 
                 <div class="glass-panel rounded-3xl p-8 space-y-6">
                     <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400">
+                        <div class="w-10 h-10 rounded-xl bg-copper-500/10 flex items-center justify-center text-copper-400">
                             <i class="fa-solid fa-microchip text-lg"></i>
                         </div>
                         <h3 class="text-xl font-bold text-white">Domains & EDA Tools</h3>
                     </div>
                     <div class="flex flex-wrap gap-2.5">
-                        <span class="px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-200 text-sm font-mono">High-Speed SerDes</span>
-                        <span class="px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-200 text-sm font-mono">Cadence Virtuoso</span>
-                        <span class="px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-200 text-sm font-mono">Design Compiler</span>
-                        <span class="px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-200 text-sm font-mono">SKILL Scripting</span>
-                        <span class="px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-200 text-sm font-mono">Xilinx Zynq-7 FPGA</span>
-                        <span class="px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-200 text-sm font-mono">Geant4 Simulation</span>
+                        <span class="px-3.5 py-2 rounded-xl bg-graphite-900/80 border border-graphite-800 text-graphite-200 text-sm font-mono">High-Speed SerDes</span>
+                        <span class="px-3.5 py-2 rounded-xl bg-graphite-900/80 border border-graphite-800 text-graphite-200 text-sm font-mono">Cadence Virtuoso</span>
+                        <span class="px-3.5 py-2 rounded-xl bg-graphite-900/80 border border-graphite-800 text-graphite-200 text-sm font-mono">Design Compiler</span>
+                        <span class="px-3.5 py-2 rounded-xl bg-graphite-900/80 border border-graphite-800 text-graphite-200 text-sm font-mono">SKILL Scripting</span>
+                        <span class="px-3.5 py-2 rounded-xl bg-graphite-900/80 border border-graphite-800 text-graphite-200 text-sm font-mono">Xilinx Zynq-7 FPGA</span>
+                        <span class="px-3.5 py-2 rounded-xl bg-graphite-900/80 border border-graphite-800 text-graphite-200 text-sm font-mono">Geant4 Simulation</span>
                     </div>
                 </div>
             </div>
@@ -534,10 +544,10 @@
 
         <!-- Beyond Work Section -->
         <section id="beyond" class="space-y-12">
-            <div class="border-b border-slate-800 pb-6">
-                <span class="text-blue-400 font-mono text-sm tracking-widest uppercase">Life Outside the Lab</span>
+            <div class="border-b border-graphite-800 pb-6">
+                <span class="text-copper-400 font-mono text-sm tracking-widest uppercase">Life Outside the Lab</span>
                 <h2 class="text-3xl font-bold tracking-tight text-white mt-1">Beyond Work</h2>
-                <p class="text-slate-400 text-sm mt-3 max-w-3xl">
+                <p class="text-graphite-400 text-sm mt-3 max-w-3xl">
                     A space for the things that keep me curious and recharged outside of research and silicon — hobbies, sports, travel, and more. Stay tuned, this section is growing.
                 </p>
             </div>
@@ -545,33 +555,33 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Hobbies -->
                 <div class="glass-panel rounded-3xl p-8 space-y-4 glass-panel-hover transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400">
+                    <div class="w-12 h-12 rounded-xl bg-copper-500/10 flex items-center justify-center text-copper-400">
                         <i class="fa-solid fa-palette text-xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white">Hobbies</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
+                    <p class="text-graphite-400 text-sm leading-relaxed">
                         Coming soon — the creative pursuits and side projects I enjoy in my free time.
                     </p>
                 </div>
 
                 <!-- Sports -->
                 <div class="glass-panel rounded-3xl p-8 space-y-4 glass-panel-hover transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400">
+                    <div class="w-12 h-12 rounded-xl bg-copper-500/10 flex items-center justify-center text-copper-400">
                         <i class="fa-solid fa-person-running text-xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white">Sports</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
+                    <p class="text-graphite-400 text-sm leading-relaxed">
                         Coming soon — the sports and activities that keep me active and energized.
                     </p>
                 </div>
 
                 <!-- More -->
                 <div class="glass-panel rounded-3xl p-8 space-y-4 glass-panel-hover transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400">
+                    <div class="w-12 h-12 rounded-xl bg-copper-500/10 flex items-center justify-center text-copper-400">
                         <i class="fa-solid fa-compass text-xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white">& More</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
+                    <p class="text-graphite-400 text-sm leading-relaxed">
                         Coming soon — travel, reading, and other interests I'd love to share.
                     </p>
                 </div>
@@ -581,19 +591,19 @@
     </main>
 
     <!-- Footer -->
-    <footer class="mt-24 border-t border-slate-800 bg-darkbg/90 py-12 relative z-10">
+    <footer class="mt-24 border-t border-graphite-800 bg-darkbg/90 py-12 relative z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div class="flex items-center space-x-3">
-                <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-mono font-bold text-sm">
+                <div class="w-8 h-8 rounded-lg bg-copper-600 flex items-center justify-center text-white font-mono font-bold text-sm">
                     ZC
                 </div>
-                <span class="text-slate-400 text-sm">© 2026 Dr. Zhuo Chen. All rights reserved.</span>
+                <span class="text-graphite-400 text-sm">© 2026 Dr. Zhuo Chen. All rights reserved.</span>
             </div>
             <div class="flex items-center space-x-6">
-                <a href="mailto:chenzhuo0526@gmail.com" class="text-slate-400 hover:text-blue-400 transition-colors text-sm">Email</a>
-                <a href="https://www.linkedin.com/in/zhuo-chen-ph-d-21658914a/" target="_blank" class="text-slate-400 hover:text-blue-400 transition-colors text-sm">LinkedIn</a>
-                <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=RivrHPQAAAAJ" target="_blank" class="text-slate-400 hover:text-blue-400 transition-colors text-sm">Google Scholar</a>
-                <a href="#about" class="text-slate-400 hover:text-blue-400 transition-colors text-sm">Back to top</a>
+                <a href="mailto:chenzhuo0526@gmail.com" class="text-graphite-400 hover:text-copper-400 transition-colors text-sm">Email</a>
+                <a href="https://www.linkedin.com/in/zhuo-chen-ph-d-21658914a/" target="_blank" class="text-graphite-400 hover:text-copper-400 transition-colors text-sm">LinkedIn</a>
+                <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=RivrHPQAAAAJ" target="_blank" class="text-graphite-400 hover:text-copper-400 transition-colors text-sm">Google Scholar</a>
+                <a href="#about" class="text-graphite-400 hover:text-copper-400 transition-colors text-sm">Back to top</a>
             </div>
         </div>
     </footer>
@@ -613,11 +623,11 @@
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 filterBtns.forEach(b => {
-                    b.classList.remove('bg-blue-600', 'text-white');
-                    b.classList.add('glass-panel', 'text-slate-300');
+                    b.classList.remove('bg-copper-600', 'text-white');
+                    b.classList.add('glass-panel', 'text-graphite-300');
                 });
-                btn.classList.remove('glass-panel', 'text-slate-300');
-                btn.classList.add('bg-blue-600', 'text-white');
+                btn.classList.remove('glass-panel', 'text-graphite-300');
+                btn.classList.add('bg-copper-600', 'text-white');
 
                 const filter = btn.getAttribute('data-filter');
                 projectCards.forEach(card => {
@@ -654,8 +664,8 @@
 
         function animate() {
             ctx.clearRect(0, 0, width, height);
-            ctx.strokeStyle = 'rgba(59, 130, 246, 0.4)';
-            ctx.fillStyle = 'rgba(96, 165, 250, 0.8)';
+            ctx.strokeStyle = 'rgba(212, 135, 90, 0.4)';
+            ctx.fillStyle = 'rgba(232, 168, 124, 0.8)';
 
             // Update and draw particles
             particles.forEach(p => {
