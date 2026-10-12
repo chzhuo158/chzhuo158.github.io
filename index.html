@@ -22,7 +22,7 @@
         }
     </script>
     <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <!-- Google Fonts: Inter & Fira Code -->
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -84,12 +84,8 @@
                 <a href="#skills" class="text-slate-300 hover:text-blue-400 transition-colors">Skills</a>
             </nav>
 
-            <!-- Actions & Theme Toggle -->
+            <!-- Actions -->
             <div class="flex items-center space-x-4">
-                <button id="theme-toggle" class="p-2.5 rounded-xl glass-panel text-slate-300 hover:text-blue-400 transition-colors" aria-label="Toggle theme">
-                    <i class="fa-solid fa-moon dark:hidden"></i>
-                    <i class="fa-solid fa-sun hidden dark:block text-amber-400"></i>
-                </button>
                 <a href="mailto:chenzhuo0526@gmail.com" class="hidden sm:inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm shadow-lg shadow-blue-600/30 transition-all hover:scale-[1.02]">
                     <i class="fa-solid fa-envelope"></i>
                     <span>Contact</span>
@@ -139,7 +135,7 @@
                         <a href="mailto:chenzhuo0526@gmail.com" class="p-3 rounded-xl glass-panel text-slate-300 hover:text-blue-400 transition-colors" title="Email">
                             <i class="fa-solid fa-envelope text-lg"></i>
                         </a>
-                        <a href="https://linkedin.com" target="_blank" class="p-3 rounded-xl glass-panel text-slate-300 hover:text-blue-400 transition-colors" title="LinkedIn">
+                        <a href="https://www.linkedin.com/in/zhuo-chen-ph-d-21658914a/" target="_blank" class="p-3 rounded-xl glass-panel text-slate-300 hover:text-blue-400 transition-colors" title="LinkedIn">
                             <i class="fa-brands fa-linkedin-in text-lg"></i>
                         </a>
                         <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=RivrHPQAAAAJ" target="_blank" class="p-3 rounded-xl glass-panel text-slate-300 hover:text-blue-400 transition-colors" title="Google Scholar">
@@ -422,7 +418,7 @@ endmodule</code></pre>
                     </div>
                     <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=RivrHPQAAAAJ" target="_blank" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-blue-600 hover:text-white text-slate-300 text-xs font-medium transition-all flex items-center space-x-2 shrink-0">
                         <i class="fa-solid fa-book-open"></i>
-                        <span>View DOI</span>
+                        <span>View on Scholar</span>
                     </a>
                 </div>
 
@@ -435,7 +431,7 @@ endmodule</code></pre>
                     </div>
                     <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=RivrHPQAAAAJ" target="_blank" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-blue-600 hover:text-white text-slate-300 text-xs font-medium transition-all flex items-center space-x-2 shrink-0">
                         <i class="fa-solid fa-book-open"></i>
-                        <span>View DOI</span>
+                        <span>View on Scholar</span>
                     </a>
                 </div>
 
@@ -448,7 +444,7 @@ endmodule</code></pre>
                     </div>
                     <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=RivrHPQAAAAJ" target="_blank" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-blue-600 hover:text-white text-slate-300 text-xs font-medium transition-all flex items-center space-x-2 shrink-0">
                         <i class="fa-solid fa-book-open"></i>
-                        <span>View DOI</span>
+                        <span>View on Scholar</span>
                     </a>
                 </div>
             </div>
@@ -512,7 +508,7 @@ endmodule</code></pre>
             </div>
             <div class="flex items-center space-x-6">
                 <a href="mailto:chenzhuo0526@gmail.com" class="text-slate-400 hover:text-blue-400 transition-colors text-sm">Email</a>
-                <a href="https://linkedin.com" target="_blank" class="text-slate-400 hover:text-blue-400 transition-colors text-sm">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/zhuo-chen-ph-d-21658914a/" target="_blank" class="text-slate-400 hover:text-blue-400 transition-colors text-sm">LinkedIn</a>
                 <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=RivrHPQAAAAJ" target="_blank" class="text-slate-400 hover:text-blue-400 transition-colors text-sm">Google Scholar</a>
                 <a href="#about" class="text-slate-400 hover:text-blue-400 transition-colors text-sm">Back to top</a>
             </div>
@@ -526,18 +522,6 @@ endmodule</code></pre>
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
-        });
-
-        // Theme Toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        const htmlElement = document.documentElement;
-        themeToggle.addEventListener('click', () => {
-            htmlElement.classList.toggle('dark');
-            if(htmlElement.classList.contains('dark')) {
-                htmlElement.style.colorScheme = 'dark';
-            } else {
-                htmlElement.style.colorScheme = 'light';
-            }
         });
 
         // Project Filtering
@@ -587,4 +571,45 @@ endmodule</code></pre>
 
         function animate() {
             ctx.clearRect(0, 0, width, height);
-            ctx.strokeStyle = 'rgba(59, 130,
+            ctx.strokeStyle = 'rgba(59, 130, 246, 0.4)';
+            ctx.fillStyle = 'rgba(96, 165, 250, 0.8)';
+
+            // Update and draw particles
+            particles.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
+
+                // Wrap around edges
+                if (p.x < 0) p.x = width;
+                if (p.x > width) p.x = 0;
+                if (p.y < 0) p.y = height;
+                if (p.y > height) p.y = 0;
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+                ctx.fill();
+            });
+
+            // Draw connecting lines between nearby particles
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 140) {
+                        ctx.globalAlpha = 1 - dist / 140;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                        ctx.globalAlpha = 1;
+                    }
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
+</body>
+</html>
